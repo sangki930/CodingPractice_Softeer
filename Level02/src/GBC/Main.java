@@ -1,7 +1,10 @@
 package GBC;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 class Pair{
     int high;
@@ -22,6 +25,9 @@ public class Main
 {
     public static void main(String args[]) throws Exception
     {
+    	List<String> list = new ArrayList<>();
+    	list.stream().map(i->(String)i).toArray(String[]::new);
+    	
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
         String input[]=br.readLine().split(" ");
