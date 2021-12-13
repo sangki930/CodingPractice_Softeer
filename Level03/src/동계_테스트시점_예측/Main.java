@@ -17,7 +17,6 @@ public class Main
             for(int j=0;j<m;j++)
                 map[i][j]=Integer.parseInt(input[j]);
         }
-
         LinkedList<int[]> melted = new LinkedList<>();
         while(true){
             boolean[][] visited=new boolean[n][m];
