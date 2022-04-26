@@ -20,6 +20,7 @@ public class Main
             String cmd = input[0];
             int id = Integer.parseInt(input[1]);
             String result = "";
+            //
             switch(cmd){
                 case "In":
                     LinkedList<int[]> queue = new LinkedList<>();
