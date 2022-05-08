@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // 참고 : softeer 알고튜터
+// 이진 탐색
 public class Main
 {
     static long[] a,b;
