@@ -24,7 +24,7 @@ public class Main
                 if(j%2==0) a[j/2] = Long.parseLong(input[j]);
                 else b[j/2] = Long.parseLong(input[j]);
             }
-            long answer = 0;
+            
             long low = 0, high = (2L)*(long)Math.pow(10,12), mid = 0;
             
             System.out.println(binarySearch(low,high));
