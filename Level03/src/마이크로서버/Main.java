@@ -17,26 +17,30 @@ public class Main
             int t = Integer.parseInt(br.readLine());
             String[] input = br.readLine().split(" ");
             int[] arr = new int[t];
-            int cnt = 0, start = 0;
+            
+            int cnt = 0; // cnt : 300의 개수
             for(int j = 0;j < t; j++){
                 arr[j] = Integer.parseInt(input[j]);
-                if(arr[j]==300) cnt++;
+                if(arr[j]<=300){
+                    cnt++;
+                }
             }
             
             Arrays.sort(arr);
-            int answer = cnt/3, index = t-1;
 
-            for(int j=(cnt/3)*3;j<=index;j++,answer++){
-                while(index>j && arr[j]+arr[index--]>limit){
-                    answer++;
+            int answer = 0, start = cnt, end = t-1;
+
+            while(start<=end){
+                answer++;
+                if(arr[end]>600){
+
                 }
-                // int sum = arr[j];
-                // while(index>j && sum+arr[index]<=limit){
-                //     sum+=arr[index--];
-                // }
-                // System.out.println("인덱스 : "+index);
+                else if(start != end && arr[start] + arr[end] <= 900) start++;
+                else if(cnt>0) cnt--;
+                end--;
             }
-             System.out.println(answer);  
+            answer += (cnt+2)/3;
+            System.out.println(answer);  
         }
 
         br.close();
