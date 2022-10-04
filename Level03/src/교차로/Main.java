@@ -34,11 +34,14 @@ public class Main
         Arrays.fill(roads,new LinkedList<Integer>());
         int idx = 0;
         loop : for(int time : map.keySet()){
-            elapsed = time;
+            elapsed += time;
             LinkedList<Character> q = map.getOrDefault(time,new LinkedList<>());
             while(!q.isEmpty()){
                 char dir = q.poll();
-                
+                switch(dir){
+                    case 'A':
+                        break;
+                }
             }
 
         }
