@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeMap;
 
+// ¹Ì¿Ï
 public class Main
 {
     public static void main(String args[]) throws IOException
