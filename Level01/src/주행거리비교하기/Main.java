@@ -1,7 +1,8 @@
 package 주행거리비교하기;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 public class Main
