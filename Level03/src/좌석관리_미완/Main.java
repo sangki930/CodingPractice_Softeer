@@ -1,4 +1,4 @@
-package ÁÂ¼®°ü¸®_¹Ì¿Ï;
+package ì¢Œì„ê´€ë¦¬_ë¯¸ì™„;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,8 +14,8 @@ public class Main
         String[] input = br.readLine().split(" ");
         int n = Integer.parseInt(input[0]), m = Integer.parseInt(input[1]), q = Integer.parseInt(input[2]);
         int[][] seats = new int[n][m];
-        int[] occupied = new int[10000+1]; // 0 : Á¡½ÉÀ» ¸ÔÁö ¾ÊÀ½, 1 : ÀÌ¿ë Áß, -1 : ÀÌ¹Ì ¸ÔÀ½
-        int[][] points = new int[10000+1][2]; // ±× idÀÇ ÁÂÇ¥
+        int[] occupied = new int[10000+1]; // 0 : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 1 : ï¿½Ì¿ï¿½ ï¿½ï¿½, -1 : ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+        int[][] points = new int[10000+1][2]; // ï¿½ï¿½ idï¿½ï¿½ ï¿½ï¿½Ç¥
         StringBuilder sb = new StringBuilder();
         for(int i=0;i<q;i++){
             input = br.readLine().split(" ");
@@ -26,8 +26,8 @@ public class Main
             switch(cmd){
                 case "In":
                     LinkedList<int[]> queue = new LinkedList<>();
-                    queue.offer(new int[]{0,0}); // (Çà, ¿­)
-                    int state = 0; // 0 : ¸ğµç »ç¶÷ÀÌ ÁÂ¼®¿¡ ¾É¾ÆÀÖÀ½, 1 : , 2 : ÀÌ¹Ì ¾É¾ÆÀÖÀ½
+                    queue.offer(new int[]{0,0}); // (ï¿½ï¿½, ï¿½ï¿½)
+                    int state = 0; // 0 : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â¼ï¿½ï¿½ï¿½ ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½, 1 : , 2 : ï¿½Ì¹ï¿½ ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½
                     int x = -1, y = -1;
                     while(!queue.isEmpty()){
                         int[] point = queue.poll();
