@@ -1,4 +1,4 @@
-package Åë±Ù¹ö½ºÃâ¹ß¼ø¼­°ËÁõÇÏ±â;
+package í†µê·¼ë²„ìŠ¤ì¶œë°œìˆœì„œê²€ì¦í•˜ê¸°;
 
 import java.util.*;
 import java.io.*;
