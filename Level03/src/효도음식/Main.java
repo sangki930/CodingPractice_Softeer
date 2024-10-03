@@ -11,40 +11,35 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        long[] dp = new long[n];
+        long[] arr = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray();
+        long[] dp1 = new long[n];
         long[] dp2 = new long[n];
-        Arrays.fill(dp, Long.MIN_VALUE);
-        Arrays.fill(dp2, Long.MIN_VALUE);
-
-        int left = 0, right = 0;
-        long sum = arr[0];
-        dp[0] = sum;
-        while(0<=left && left<n-2 && 0 <= right && right<n-2){
-
-            if(left == right || sum + arr[right] >= sum){
-                sum+=arr[++right];
-            }else{
-                sum-=arr[left++];
+        long localMax = arr[0];
+        long globalMax = arr[0];
+        dp1[0] = arr[0];
+        for(int i=1;i<arr.length;i++){
+            localMax = Math.max(arr[i], localMax + arr[i]);
+            if(localMax > globalMax) {
+                globalMax = localMax;
             }
-            dp[right] = Math.max(Math.max(dp[right], sum),dp[right-1]);
-            //System.out.println("sum : "+sum+", left : "+left+", right : "+right);
+            dp1[i] = globalMax;
         }
-        left = n-1; right = n-1;
-        sum = arr[n-1];
-        dp2[n-1] = sum;
-        while(2<=left && left<n && 2 <= right && right<n){
-
-            if(left == right || sum + arr[left] >= sum){
-                sum+=arr[--left];
-            }else{
-                sum-=arr[right--];
+        localMax = arr[n-1];
+        globalMax = arr[n-1];
+        dp2[n-1] = arr[n-1];
+        for(int i=arr.length-2;i>=0;i--){
+            localMax = Math.max(arr[i], localMax + arr[i]);
+            if(localMax > globalMax) {
+                globalMax = localMax;
             }
-            dp2[left] = Math.max(Math.max(dp2[left], sum),dp2[left+1]);
-            //System.out.println("sum : "+sum+", left : "+left+", right : "+right);
+            dp2[i] = globalMax;
         }
-        System.out.println(Arrays.toString(dp));
-        System.out.println(Arrays.toString(dp2));
+        long answer = Long.MIN_VALUE;
+
+        for(int i=0;i<n-2;i++){
+            answer = Math.max(answer, dp1[i] + dp2[i+2]);
+        }
+        System.out.println(answer);
 
         br.close();
     }
