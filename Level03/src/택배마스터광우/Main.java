@@ -1,13 +1,11 @@
-package ÅÃ¹è¸¶½ºÅÍ±¤¿ì;
+package íƒë°°ë§ˆìŠ¤í„°ê´‘ìš°;
 
 import java.util.*;
 import java.io.*;
 
 
-public class Main
-{
-    public static void main(String args[]) throws IOException
-    {
+public class Main {
+    public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] input = br.readLine().split(" ");
         int n = Integer.parseInt(input[0]), m=Integer.parseInt(input[1]), k=Integer.parseInt(input[2]);
@@ -20,7 +18,7 @@ public class Main
             long cum=0;
             int p=0,tmp=k;
             LinkedList<Integer> queue = new LinkedList<>();
-            // System.out.println(arr);
+
             int idx=0;
             while(tmp>0){
                 int i = arr.get(idx%n);
